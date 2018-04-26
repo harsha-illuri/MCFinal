@@ -4,5 +4,8 @@ from django.shortcuts import render
 import time
 from django.http import HttpResponse, HttpRequest
 def test(request):
-    time.sleep(10)
-    return HttpResponse('hello')
+    data = request.GET.get('data', '')
+    if len(data) == 0:
+        HttpResponse(404)
+    print(data)
+    return HttpResponse(data)

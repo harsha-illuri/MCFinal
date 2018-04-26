@@ -5,5 +5,5 @@ from django.urls import path, include
 
 from mcfinal import views
 urlpatterns = [
-    path('$/', views.test, name = 'test'),
+    path('$', views.test, name = 'test'),
 ]
